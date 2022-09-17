@@ -1,10 +1,13 @@
 TAR := tb_alu
 
-SRC := vhdl/alu.vhd 		\
-	   test/tb_alu.vhd
+SRC := 	vhdl/common_pkg.vhd 		\
+		vhdl/alu.vhd 				\
+	   	test/tb_alu.vhd
+
+WAVEFILE = sim/$(TAR).ghw
 
 OPT = --workdir=work --std=08
-SIM = --wave=sim/$(ENT).ghw
+SIM = --wave=$(WAVEFILE)
 
 all: analyse elaborate run
 
@@ -17,3 +20,5 @@ elaborate:
 run:
 	ghdl -r $(OPT) $(TAR) $(SIM)
 
+wave:
+	gtkwave $(WAVEFILE)
