@@ -10,12 +10,12 @@ use work.common.all; --- aluop_t type and it's conversion function.
 
 entity alu is
     generic (
-        width_g : integer := 32
+        width_g : integer := xlen_c
     );
     port (
         v1_in   : in std_logic_vector(width_g - 1 downto 0);
         v2_in   : in std_logic_vector(width_g - 1 downto 0);
-        op_in   : in std_logic_vector(w_aluctrl_c - 1 downto 0);
+        op_in   : in std_logic_vector(aluctrlw_c - 1 downto 0);
         res_out : out std_logic_vector(width_g - 1 downto 0)
     );
 end entity alu;

@@ -2,7 +2,9 @@ TAR := tb_alu
 
 SRC := 	vhdl/common_pkg.vhd 		\
 		vhdl/alu.vhd 				\
-	   	test/tb_alu.vhd
+		vhdl/regfile.vhd 			\
+	   	test/tb_alu.vhd				\
+	   	test/tb_regfile.vhd
 
 WAVEFILE = sim/$(TAR).ghw
 
