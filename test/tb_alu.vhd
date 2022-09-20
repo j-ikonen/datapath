@@ -5,10 +5,10 @@ use IEEE.numeric_std.all;
 library work;
 use work.common.all; --- aluop_t type and it's conversion function.
 
-entity tb_regfile is
-end entity tb_regfile;
+entity tb_alu is
+end entity tb_alu;
 
-architecture behaviour of tb_regfile is
+architecture behaviour of tb_alu is
     constant ntests_c : integer := 17;
 
     type values_t is array (0 to ntests_c-1, 0 to 3) of integer;

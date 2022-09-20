@@ -5,10 +5,10 @@ use IEEE.numeric_std.all;
 library work;
 use work.common.all; --- aluop_t type and it's conversion function.
 
-entity tb_alu is
-end entity tb_alu;
+entity tb_regfile is
+end entity tb_regfile;
 
-architecture behaviour of tb_alu is
+architecture behaviour of tb_regfile is
     signal clk : std_logic := '0';
     signal rst_n : std_logic := '0';
 

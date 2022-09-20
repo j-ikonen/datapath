@@ -28,9 +28,8 @@ package common is
 
     --- Translate the operator input vector to a enumerated type.
     function slv2aluop(opvec : std_logic_vector(aluctrlw_c-1 downto 0)) return aluop_t;
-    function aluop2slv(op : aluop_t) return std_logic_vector;
+    function aluop2slv(aluop : aluop_t) return std_logic_vector;
 
-    function get_iformat(opcode : opcode_t) return iformat_t;
 end package common;
 
 -------------------------------------------------------------------------------
@@ -41,15 +40,9 @@ package body common is
         return aluop_t'val(to_integer(unsigned(opvec)));
     end slv2aluop;
 
-    function aluop2slv(op : aluop_t) return std_logic_vector is 
+    function aluop2slv(aluop : aluop_t) return std_logic_vector is 
     begin
-        return std_logic_vector(to_unsigned(aluop_t'pos(op), aluctrlw_c));
+        return std_logic_vector(to_unsigned(aluop_t'pos(aluop), aluctrlw_c));
     end aluop2slv;
-    
-    function get_iformat(opcode : opcode_t) return iformat_t is 
-    begin
-        case opcode is
-            when lui => return 
-    end get_iformat;
     
 end package body common;
